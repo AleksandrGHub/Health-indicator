@@ -414,6 +414,8 @@ GameObject:
   - component: {fileID: 337889117}
   - component: {fileID: 337889116}
   - component: {fileID: 337889120}
+  - component: {fileID: 337889121}
+  - component: {fileID: 337889122}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -519,6 +521,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7891fc5a6c1835c4ebd12514d4a6106c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &337889121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337889115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e796c4c04a4766468973888bb91174b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: {fileID: 337889120}
+  _value: 10
+  _button: {fileID: 1246026959}
+  _healthBar: {fileID: 1911029114}
+  _textBar: {fileID: 637567329}
+--- !u!114 &337889122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337889115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44563e7af4ad9f74f9334b0e4f3ccfc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: {fileID: 337889120}
+  _value: 10
+  _button: {fileID: 1656201491}
+  _healthBar: {fileID: 1911029114}
+  _textBar: {fileID: 637567329}
 --- !u!1 &392403994
 GameObject:
   m_ObjectHideFlags: 0
@@ -1285,7 +1321,7 @@ MonoBehaviour:
           m_FloatArgument: 10
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
       - m_Target: {fileID: 1911029114}
         m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
         m_MethodName: ChangeValue
@@ -1297,7 +1333,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
       - m_Target: {fileID: 637567329}
         m_TargetAssemblyTypeName: TextBar, Assembly-CSharp
         m_MethodName: ChangeField
@@ -1309,7 +1345,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
 --- !u!114 &1246026960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1625,7 +1661,7 @@ MonoBehaviour:
           m_FloatArgument: 10
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
       - m_Target: {fileID: 1911029114}
         m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
         m_MethodName: ChangeValue
@@ -1637,7 +1673,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
       - m_Target: {fileID: 637567329}
         m_TargetAssemblyTypeName: TextBar, Assembly-CSharp
         m_MethodName: ChangeField
@@ -1649,7 +1685,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
 --- !u!114 &1656201492
 MonoBehaviour:
   m_ObjectHideFlags: 0
