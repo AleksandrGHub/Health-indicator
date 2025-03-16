@@ -160,6 +160,50 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &129275693
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 129275695}
+  - component: {fileID: 129275694}
+  m_Layer: 0
+  m_Name: Health
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &129275694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129275693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7891fc5a6c1835c4ebd12514d4a6106c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &129275695
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129275693}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &172404773
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,9 +457,6 @@ GameObject:
   - component: {fileID: 337889118}
   - component: {fileID: 337889117}
   - component: {fileID: 337889116}
-  - component: {fileID: 337889120}
-  - component: {fileID: 337889121}
-  - component: {fileID: 337889122}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -509,52 +550,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &337889120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 337889115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7891fc5a6c1835c4ebd12514d4a6106c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &337889121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 337889115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e796c4c04a4766468973888bb91174b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Health: {fileID: 337889120}
-  _value: 10
-  _button: {fileID: 1246026959}
-  _healthBar: {fileID: 1911029114}
-  _textBar: {fileID: 637567329}
---- !u!114 &337889122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 337889115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44563e7af4ad9f74f9334b0e4f3ccfc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Health: {fileID: 337889120}
-  _value: 10
-  _button: {fileID: 1656201491}
-  _healthBar: {fileID: 1911029114}
-  _textBar: {fileID: 637567329}
 --- !u!1 &392403994
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,7 +942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9cd2c3fdd9d6741bb51db2ec0fba4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: {fileID: 337889120}
+  _health: {fileID: 129275694}
   _textField: {fileID: 637567327}
 --- !u!1 &863379377
 GameObject:
@@ -1238,6 +1233,7 @@ GameObject:
   - component: {fileID: 1246026961}
   - component: {fileID: 1246026960}
   - component: {fileID: 1246026959}
+  - component: {fileID: 1246026962}
   m_Layer: 5
   m_Name: DamageButton
   m_TagString: Untagged
@@ -1309,43 +1305,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1246026960}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 337889120}
-        m_TargetAssemblyTypeName: Health, Assembly-CSharp
-        m_MethodName: Decrease
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 10
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 0
-      - m_Target: {fileID: 1911029114}
-        m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
-        m_MethodName: ChangeValue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 0
-      - m_Target: {fileID: 637567329}
-        m_TargetAssemblyTypeName: TextBar, Assembly-CSharp
-        m_MethodName: ChangeField
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 0
+      m_Calls: []
 --- !u!114 &1246026960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1384,6 +1344,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1246026957}
   m_CullTransparentMesh: 1
+--- !u!114 &1246026962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246026957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e823e2daee9a6f445a6817637e6a2841, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: {fileID: 129275694}
+  Value: 10
+  _button: {fileID: 1246026959}
 --- !u!1 &1519641283
 GameObject:
   m_ObjectHideFlags: 0
@@ -1564,8 +1539,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78e40c8e96073b843986db28a6b288c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthBarSlider: {fileID: 1587994943}
-  Health: {fileID: 337889120}
+  Slider: {fileID: 1587994943}
+  Health: {fileID: 129275694}
 --- !u!1 &1656201489
 GameObject:
   m_ObjectHideFlags: 0
@@ -1578,6 +1553,7 @@ GameObject:
   - component: {fileID: 1656201493}
   - component: {fileID: 1656201492}
   - component: {fileID: 1656201491}
+  - component: {fileID: 1656201494}
   m_Layer: 5
   m_Name: HealthButton
   m_TagString: Untagged
@@ -1649,43 +1625,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1656201492}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 337889120}
-        m_TargetAssemblyTypeName: Health, Assembly-CSharp
-        m_MethodName: Increase
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 10
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 0
-      - m_Target: {fileID: 1911029114}
-        m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
-        m_MethodName: ChangeValue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 0
-      - m_Target: {fileID: 637567329}
-        m_TargetAssemblyTypeName: TextBar, Assembly-CSharp
-        m_MethodName: ChangeField
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 0
+      m_Calls: []
 --- !u!114 &1656201492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1724,6 +1664,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1656201489}
   m_CullTransparentMesh: 1
+--- !u!114 &1656201494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656201489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 421573debbefc9443a2d9bd2c188d991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: {fileID: 129275694}
+  Value: 10
+  _button: {fileID: 1656201491}
 --- !u!1 &1688625876
 GameObject:
   m_ObjectHideFlags: 0
@@ -1904,8 +1859,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f623a33b332b8442aa19eef99ea3b09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthBarSlider: {fileID: 1911029113}
-  Health: {fileID: 337889120}
+  Slider: {fileID: 1911029113}
+  Health: {fileID: 129275694}
 --- !u!1 &1928331020
 GameObject:
   m_ObjectHideFlags: 0

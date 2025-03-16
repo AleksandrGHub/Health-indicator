@@ -8,6 +8,16 @@ public class TextBar : MonoBehaviour
 
     private string _maxHealthValue;
 
+    private void OnEnable()
+    {
+        _health.QuantityChange += ChangeField;
+    }
+
+    private void OnDisable()
+    {
+        _health.QuantityChange -= ChangeField;
+    }
+
     private void Start()
     {
         Init();

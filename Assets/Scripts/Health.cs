@@ -1,9 +1,12 @@
+using System;
 using UnityEngine;
 
 public class Health : MonoBehaviour
 {
     private float _maxQuantity = 100;
     private float _minQuantity = 0;
+
+    public event Action QuantityChange;
 
     public float Quantity { get; private set; }
 
@@ -14,21 +17,23 @@ public class Health : MonoBehaviour
 
     public void Increase(float health)
     {
-        if (TryCheckPositivity(health))
+        if (IsPositive(health))
         {
             Quantity = Mathf.Clamp(Quantity + health, _minQuantity, _maxQuantity);
+            QuantityChange?.Invoke();
         }
     }
 
     public void Decrease(float damage)
     {
-        if (TryCheckPositivity(damage))
+        if (IsPositive(damage))
         {
             Quantity = Mathf.Clamp(Quantity - damage, _minQuantity, _maxQuantity);
+            QuantityChange?.Invoke();
         }
     }
 
-    private bool TryCheckPositivity(float number)
+    private bool IsPositive(float number)
     {
         return number >= 0;
     }
