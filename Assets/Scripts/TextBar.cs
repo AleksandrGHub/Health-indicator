@@ -1,36 +1,30 @@
 using TMPro;
 using UnityEngine;
 
-public class TextBar : MonoBehaviour
+public class TextBar : Bar
 {
-    [SerializeField] private Health _health;
     [SerializeField] private TextMeshProUGUI _textField;
 
-    private string _maxHealthValue;
-
-    private void OnEnable()
+    protected override void OnEnable()
     {
-        _health.QuantityChange += ChangeField;
+        base.OnEnable();
+        Health.QuantityChange += ShowValue;
     }
 
-    private void OnDisable()
+    protected override void OnDisable()
     {
-        _health.QuantityChange -= ChangeField;
+        base.OnDisable();
+        Health.QuantityChange -= ShowValue;
     }
 
-    private void Start()
+    protected override void Start()
     {
-        Init();
+        base.Start();
+        ShowValue();
     }
 
-    public void ChangeField()
+    private void ShowValue()
     {
-        _textField.text = _health.Quantity.ToString() + "/" + _maxHealthValue;
-    }
-
-    private void Init()
-    {
-        _maxHealthValue = _health.Quantity.ToString();
-        ChangeField();
+        _textField.text = Slider.value + "/" + Slider.maxValue;
     }
 }

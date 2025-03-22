@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    private float _maxQuantity = 100;
+    private float _maxQuantity = 100f;
     private float _minQuantity = 0;
 
     public event Action QuantityChange;

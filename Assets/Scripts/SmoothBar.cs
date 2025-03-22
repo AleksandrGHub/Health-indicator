@@ -1,13 +1,23 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SmoothBar : Bar
 {
-    private float _recoveryRate = 10f;
+    private float _recoveryRate = 20f;
+    private IEnumerator _coroutine;
+
+    protected override void Start()
+    {
+        base.Start();
+        _coroutine = SlowDownChange();
+    }
 
     public override void ChangeValue()
     {
-        StartCoroutine(SlowDownChange());
+        StopCoroutine(_coroutine);
+        _coroutine = SlowDownChange();
+        StartCoroutine(_coroutine);
     }
 
     private IEnumerator SlowDownChange()

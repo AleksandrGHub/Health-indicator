@@ -3,32 +3,27 @@ using UnityEngine.UI;
 
 public class Bar : MonoBehaviour
 {
-    [SerializeField] protected Slider Slider;
     [SerializeField] protected Health Health;
+    [SerializeField] protected Slider Slider;
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         Health.QuantityChange += ChangeValue;
     }
 
-    private void OnDisable()
+    protected virtual void OnDisable()
     {
         Health.QuantityChange -= ChangeValue;
     }
 
-    private void Start()
+    protected virtual void Start()
     {
-        Init();
-    }
-
-    virtual public void ChangeValue()
-    {
+        Slider.maxValue = Health.Quantity;
         Slider.value = Health.Quantity;
     }
 
-    private void Init()
+    public virtual void ChangeValue()
     {
-        Slider.maxValue = Health.Quantity;
         Slider.value = Health.Quantity;
     }
 }
